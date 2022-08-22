@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		56B2917128B3E4A600494774 /* FlightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2917028B3E4A600494774 /* FlightsApp.swift */; };
-		56B2917328B3E4A600494774 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2917228B3E4A600494774 /* ContentView.swift */; };
+		56B2917328B3E4A600494774 /* FlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2917228B3E4A600494774 /* FlightsView.swift */; };
 		56B2917528B3E4A700494774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B2917428B3E4A700494774 /* Assets.xcassets */; };
 		56B2917828B3E4A700494774 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B2917728B3E4A700494774 /* Preview Assets.xcassets */; };
+		56B2918528B3E8C000494774 /* Requester in Frameworks */ = {isa = PBXBuildFile; productRef = 56B2918428B3E8C000494774 /* Requester */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56B2916D28B3E4A600494774 /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B2917028B3E4A600494774 /* FlightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsApp.swift; sourceTree = "<group>"; };
-		56B2917228B3E4A600494774 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		56B2917228B3E4A600494774 /* FlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsView.swift; sourceTree = "<group>"; };
 		56B2917428B3E4A700494774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56B2917728B3E4A700494774 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		56B2918228B3E82600494774 /* Requester */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Requester; path = Libraries/Requester; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +28,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B2918528B3E8C000494774 /* Requester in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560FC02028B3EDA70007ADEA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				560FC02228B3EDEB0007ADEA /* Model */,
+				56B2917228B3E4A600494774 /* FlightsView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		560FC02228B3EDEB0007ADEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		56B2916428B3E4A600494774 = {
 			isa = PBXGroup;
 			children = (
+				56B2918128B3E82600494774 /* Packages */,
 				56B2916F28B3E4A600494774 /* Flights */,
 				56B2916E28B3E4A600494774 /* Products */,
+				56B2918328B3E8C000494774 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				56B2917028B3E4A600494774 /* FlightsApp.swift */,
-				56B2917228B3E4A600494774 /* ContentView.swift */,
+				560FC02028B3EDA70007ADEA /* Presentation */,
 				56B2917428B3E4A700494774 /* Assets.xcassets */,
 				56B2917628B3E4A700494774 /* Preview Content */,
 			);
@@ -65,6 +86,21 @@
 				56B2917728B3E4A700494774 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		56B2918128B3E82600494774 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				56B2918228B3E82600494774 /* Requester */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		56B2918328B3E8C000494774 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +119,9 @@
 			dependencies = (
 			);
 			name = Flights;
+			packageProductDependencies = (
+				56B2918428B3E8C000494774 /* Requester */,
+			);
 			productName = Flights;
 			productReference = 56B2916D28B3E4A600494774 /* Flights.app */;
 			productType = "com.apple.product-type.application";
@@ -137,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B2917328B3E4A600494774 /* ContentView.swift in Sources */,
+				56B2917328B3E4A600494774 /* FlightsView.swift in Sources */,
 				56B2917128B3E4A600494774 /* FlightsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flights/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,6 +335,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flights/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -337,6 +378,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56B2918428B3E8C000494774 /* Requester */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Requester;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 56B2916528B3E4A600494774 /* Project object */;
 }

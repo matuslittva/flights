@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FlightsView.swift
 //  Flights
 //
 //  Created by Matus Littva on 22/08/2022.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FlightsView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FlightsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FlightsView()
     }
 }
