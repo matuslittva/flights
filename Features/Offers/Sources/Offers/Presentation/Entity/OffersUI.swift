@@ -15,11 +15,9 @@ struct OfferItemUI: Identifiable {
     let id: String
     let title: String
     let price: String
-    let imageID: String
-
-    func imageURL(for size: CGSize) -> URL? {
-        URL(string: "https://images.kiwi.com/photos/\(size.width)x\(size.height)/\(imageID).jpg")
-    }
+    let duration: String
+    let hashtags: String
+    let imageURL: URL?
 }
 
 extension OffersUI {
@@ -34,7 +32,9 @@ extension OfferItemUI {
             id: UUID().uuidString,
             title: "Paris",
             price: "89 €",
-            imageID: "photos"
+            duration: "2h 15m",
+            hashtags: "#tuesday, #sunny, #direct",
+            imageURL: URL(string: "https://images.kiwi.com/photos/600x330/photos.jpg")
         )
     }
 }

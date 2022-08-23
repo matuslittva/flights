@@ -25,6 +25,7 @@ struct OffersView<ViewModel: OffersVMType>: View {
                 errorView(title: "Unable to load data 🤕,\ntry again later.")
             }
         }
+        .padding()
         .navigationTitle("Flight offers")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -52,7 +53,6 @@ struct OffersView<ViewModel: OffersVMType>: View {
                 .padding(.vertical)
             Spacer()
         }
-        .padding()
     }
 }
 
