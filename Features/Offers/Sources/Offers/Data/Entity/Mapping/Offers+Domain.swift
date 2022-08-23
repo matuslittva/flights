@@ -22,7 +22,8 @@ extension OffersResponse {
                     price: offer.price,
                     countryFrom: offer.countryFrom.name,
                     countryTo: offer.countryTo.name,
-                    hashtags: offer.hashtags
+                    hashtags: offer.hashtags,
+                    imageID: offer.mapIdto
                 )
             }
         )

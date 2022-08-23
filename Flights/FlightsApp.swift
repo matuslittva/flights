@@ -12,6 +12,11 @@ import SwiftUI
 struct FlightsApp: App {
     let assembler = AppAssembler()
 
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .systemCyan
+        UIPageControl.appearance().pageIndicatorTintColor = .lightGray
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationView {

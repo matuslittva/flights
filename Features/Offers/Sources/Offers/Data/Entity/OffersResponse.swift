@@ -23,6 +23,7 @@ struct FlightOfferResponse: Decodable {
     let countryFrom: CountryResponse
     let countryTo: CountryResponse
     let hashtags: [String]
+    let mapIdto: String
 }
 
 struct CountryResponse: Decodable {

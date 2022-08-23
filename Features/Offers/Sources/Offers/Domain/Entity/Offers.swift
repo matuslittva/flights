@@ -23,4 +23,5 @@ struct FlightOffer {
     let countryFrom: String
     let countryTo: String
     let hashtags: [String]
+    let imageID: String
 }

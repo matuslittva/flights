@@ -16,7 +16,8 @@ extension OffersUI {
             OfferItemUI(
                 id: offer.id,
                 title: offer.cityTo,
-                price: numberFormatter.string(from: offer.price as NSNumber) ?? "-"
+                price: numberFormatter.string(from: offer.price as NSNumber) ?? "-",
+                imageID: offer.imageID
             )
         }
     }

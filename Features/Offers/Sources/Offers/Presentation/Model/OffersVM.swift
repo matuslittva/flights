@@ -11,6 +11,9 @@ import Utilities
 
 final class OffersVM: OffersVMType {
 
+    // MARK: - Inputs
+    let tryAgain = PassthroughSubject<Void, Never>()
+
     // MARK: - Outputs
     @Published var state: OffersViewState = .loading
 
@@ -28,6 +31,11 @@ final class OffersVM: OffersVMType {
 
 private extension OffersVM {
     func setupBindings() {
+        tryAgain.sink { [weak self] _ in
+            self?.fetchData.send()
+        }
+        .store(in: &cancellable)
+
         fetchData
             .flatMap { [weak self] _ -> AnyPublisher<Result<OffersUI, UIError>, Never> in
                 guard let self = self else {

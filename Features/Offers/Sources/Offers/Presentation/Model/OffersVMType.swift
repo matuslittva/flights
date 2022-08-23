@@ -8,6 +8,7 @@
 import Combine
 
 protocol OffersVMInputs: ObservableObject {
+    var tryAgain: PassthroughSubject<Void, Never> { get }
 }
 
 protocol OffersVMOutputs {
