@@ -4,21 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "Requester",
+    name: "Offers",
     platforms: [.iOS(.v15)],
     products: [
         .library(
-            name: "Requester",
-            targets: ["Requester"]),
+            name: "Offers",
+            targets: ["Offers"]),
     ],
     dependencies: [
+        .package(path: "../Libraries/Requester")
     ],
     targets: [
         .target(
-            name: "Requester",
-            dependencies: []),
-        .testTarget(
-            name: "RequesterTests",
+            name: "Offers",
             dependencies: ["Requester"]),
+        .testTarget(
+            name: "OffersTests",
+            dependencies: ["Offers"]),
     ]
 )

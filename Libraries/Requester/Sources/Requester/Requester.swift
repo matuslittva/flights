@@ -13,17 +13,27 @@ public final class Requester: Requesting {
     private let urlSession = URLSession(configuration: .default)
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
     private let log = Logger(subsystem: Bundle.main.bundleIdentifier ?? "", category: "requester")
+    private let baseURL: URL
+    private let defaultParameters: [String: String]
 
-    public init() {}
+    public init(baseURL: URL, defaultParameters: [String: String]) {
+        self.baseURL = baseURL
+        self.defaultParameters = defaultParameters
+    }
 
     public func performRequest<Response: Decodable>(
-        _ request: URLRequest,
+        _ request: URLRequest?,
         responseType: Response.Type
     ) -> AnyPublisher<Response, RequestingError> {
-        urlSession.dataTaskPublisher(for: request)
+        guard let request = request else {
+            return Fail(error: .internalError).eraseToAnyPublisher()
+        }
+
+        return urlSession.dataTaskPublisher(for: request)
             .mapError(RequestingError.networkError)
             .flatMap { output in
                 self.handleResponse(data: output.data, response: output.response)
@@ -37,7 +47,19 @@ public final class Requester: Requesting {
             .eraseToAnyPublisher()
     }
 
-    public func buildGet(url: URL) -> URLRequest {
+    public func buildGet(with path: String, parameters: [String: String]) -> URLRequest? {
+        var urlComponents = URLComponents(url: baseURL(with: path), resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = defaultParameters
+            .merging(parameters) { current, _ in
+                current
+            }
+            .map {
+                URLQueryItem(name: $0.key, value: $0.value)
+            }
+
+        guard let url = urlComponents?.url else {
+            return nil
+        }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
 
@@ -48,8 +70,14 @@ public final class Requester: Requesting {
     }
 }
 
-public extension Requester {
-    private func handleResponse<ResponseObject: Decodable>(
+private extension Requester {
+    func baseURL(with path: String) -> URL {
+        var url = baseURL
+        url.appendPathComponent(path)
+        return url
+    }
+
+    func handleResponse<ResponseObject: Decodable>(
         data: Data,
         response: URLResponse
     ) -> AnyPublisher<ResponseObject, RequestingError> {

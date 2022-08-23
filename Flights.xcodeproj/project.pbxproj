@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560FC02828B3F20B0007ADEA /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560FC02728B3F20B0007ADEA /* AppAssembler.swift */; };
+		560FC03028B3F5020007ADEA /* Requester in Resources */ = {isa = PBXBuildFile; fileRef = 560FC02F28B3F5020007ADEA /* Requester */; };
 		56B2917128B3E4A600494774 /* FlightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2917028B3E4A600494774 /* FlightsApp.swift */; };
-		56B2917328B3E4A600494774 /* FlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2917228B3E4A600494774 /* FlightsView.swift */; };
 		56B2917528B3E4A700494774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B2917428B3E4A700494774 /* Assets.xcassets */; };
 		56B2917828B3E4A700494774 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B2917728B3E4A700494774 /* Preview Assets.xcassets */; };
-		56B2918528B3E8C000494774 /* Requester in Frameworks */ = {isa = PBXBuildFile; productRef = 56B2918428B3E8C000494774 /* Requester */; };
+		56E4E5C728B3F59200ABCFBB /* Offers in Frameworks */ = {isa = PBXBuildFile; productRef = 56E4E5C628B3F59200ABCFBB /* Offers */; };
+		56E4E5C928B3F59200ABCFBB /* Requester in Frameworks */ = {isa = PBXBuildFile; productRef = 56E4E5C828B3F59200ABCFBB /* Requester */; };
+		56E4E5CA28B3FE8F00ABCFBB /* Offers in Resources */ = {isa = PBXBuildFile; fileRef = 56E4E5C528B3F57B00ABCFBB /* Offers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560FC02728B3F20B0007ADEA /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
+		560FC02F28B3F5020007ADEA /* Requester */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Requester; sourceTree = "<group>"; };
 		56B2916D28B3E4A600494774 /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B2917028B3E4A600494774 /* FlightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsApp.swift; sourceTree = "<group>"; };
-		56B2917228B3E4A600494774 /* FlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsView.swift; sourceTree = "<group>"; };
 		56B2917428B3E4A700494774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56B2917728B3E4A700494774 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		56B2918228B3E82600494774 /* Requester */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Requester; path = Libraries/Requester; sourceTree = "<group>"; };
+		56E4E5C528B3F57B00ABCFBB /* Offers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Offers; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,27 +32,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B2918528B3E8C000494774 /* Requester in Frameworks */,
+				56E4E5C728B3F59200ABCFBB /* Offers in Frameworks */,
+				56E4E5C928B3F59200ABCFBB /* Requester in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		560FC02028B3EDA70007ADEA /* Presentation */ = {
+		560FC02E28B3F5020007ADEA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				560FC02228B3EDEB0007ADEA /* Model */,
-				56B2917228B3E4A600494774 /* FlightsView.swift */,
+				560FC02F28B3F5020007ADEA /* Requester */,
 			);
-			path = Presentation;
+			path = Libraries;
 			sourceTree = "<group>";
 		};
-		560FC02228B3EDEB0007ADEA /* Model */ = {
+		560FC03228B3F5270007ADEA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				56E4E5C528B3F57B00ABCFBB /* Offers */,
 			);
-			path = Model;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		56B2916428B3E4A600494774 = {
@@ -72,8 +77,8 @@
 		56B2916F28B3E4A600494774 /* Flights */ = {
 			isa = PBXGroup;
 			children = (
+				560FC02728B3F20B0007ADEA /* AppAssembler.swift */,
 				56B2917028B3E4A600494774 /* FlightsApp.swift */,
-				560FC02028B3EDA70007ADEA /* Presentation */,
 				56B2917428B3E4A700494774 /* Assets.xcassets */,
 				56B2917628B3E4A700494774 /* Preview Content */,
 			);
@@ -91,7 +96,8 @@
 		56B2918128B3E82600494774 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				56B2918228B3E82600494774 /* Requester */,
+				560FC03228B3F5270007ADEA /* Features */,
+				560FC02E28B3F5020007ADEA /* Libraries */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -120,7 +126,8 @@
 			);
 			name = Flights;
 			packageProductDependencies = (
-				56B2918428B3E8C000494774 /* Requester */,
+				56E4E5C628B3F59200ABCFBB /* Offers */,
+				56E4E5C828B3F59200ABCFBB /* Requester */,
 			);
 			productName = Flights;
 			productReference = 56B2916D28B3E4A600494774 /* Flights.app */;
@@ -164,8 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E4E5CA28B3FE8F00ABCFBB /* Offers in Resources */,
 				56B2917828B3E4A700494774 /* Preview Assets.xcassets in Resources */,
 				56B2917528B3E4A700494774 /* Assets.xcassets in Resources */,
+				560FC03028B3F5020007ADEA /* Requester in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,8 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B2917328B3E4A600494774 /* FlightsView.swift in Sources */,
 				56B2917128B3E4A600494774 /* FlightsApp.swift in Sources */,
+				560FC02828B3F20B0007ADEA /* AppAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +389,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		56B2918428B3E8C000494774 /* Requester */ = {
+		56E4E5C628B3F59200ABCFBB /* Offers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Offers;
+		};
+		56E4E5C828B3F59200ABCFBB /* Requester */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Requester;
 		};
