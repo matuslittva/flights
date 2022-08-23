@@ -18,7 +18,7 @@ final class OffersRepository: OffersRepositoryType {
         self.requester = requester
     }
 
-    func offers() -> AnyPublisher<[String], OffersRepositoryError> {
+    func offers() -> AnyPublisher<[FlightOffer], OffersRepositoryError> {
         let request = requester.buildGet(
             with: flightsPath,
             parameters: [
@@ -29,7 +29,7 @@ final class OffersRepository: OffersRepositoryType {
             ]
         )
         return requester.performRequest(request, responseType: OffersResponse.self)
-            .map { $0.data.map { $0.flyDuration } }
+            .map { $0.domain }
             .mapError { .requestingError($0) }
             .eraseToAnyPublisher()
     }

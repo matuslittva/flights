@@ -8,5 +8,5 @@
 import Combine
 
 protocol OffersListUseCaseType {
-    func offers() -> AnyPublisher<[String], OffersError>
+    func offers() -> AnyPublisher<[FlightOffer], OffersError>
 }
