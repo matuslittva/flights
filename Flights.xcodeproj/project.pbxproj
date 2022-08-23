@@ -15,6 +15,8 @@
 		56E4E5C728B3F59200ABCFBB /* Offers in Frameworks */ = {isa = PBXBuildFile; productRef = 56E4E5C628B3F59200ABCFBB /* Offers */; };
 		56E4E5C928B3F59200ABCFBB /* Requester in Frameworks */ = {isa = PBXBuildFile; productRef = 56E4E5C828B3F59200ABCFBB /* Requester */; };
 		56E4E5CA28B3FE8F00ABCFBB /* Offers in Resources */ = {isa = PBXBuildFile; fileRef = 56E4E5C528B3F57B00ABCFBB /* Offers */; };
+		56E4E5CE28B4DBA000ABCFBB /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 56E4E5CD28B4DB9200ABCFBB /* Utilities */; };
+		56E4E5D028B4DBA700ABCFBB /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 56E4E5CF28B4DBA700ABCFBB /* Utilities */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,7 @@
 		56B2917428B3E4A700494774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56B2917728B3E4A700494774 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56E4E5C528B3F57B00ABCFBB /* Offers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Offers; sourceTree = "<group>"; };
+		56E4E5CD28B4DB9200ABCFBB /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56E4E5C728B3F59200ABCFBB /* Offers in Frameworks */,
+				56E4E5D028B4DBA700ABCFBB /* Utilities in Frameworks */,
 				56E4E5C928B3F59200ABCFBB /* Requester in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				560FC02F28B3F5020007ADEA /* Requester */,
+				56E4E5CD28B4DB9200ABCFBB /* Utilities */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			packageProductDependencies = (
 				56E4E5C628B3F59200ABCFBB /* Offers */,
 				56E4E5C828B3F59200ABCFBB /* Requester */,
+				56E4E5CF28B4DBA700ABCFBB /* Utilities */,
 			);
 			productName = Flights;
 			productReference = 56B2916D28B3E4A600494774 /* Flights.app */;
@@ -171,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E4E5CE28B4DBA000ABCFBB /* Utilities in Resources */,
 				56E4E5CA28B3FE8F00ABCFBB /* Offers in Resources */,
 				56B2917828B3E4A700494774 /* Preview Assets.xcassets in Resources */,
 				56B2917528B3E4A700494774 /* Assets.xcassets in Resources */,
@@ -396,6 +403,10 @@
 		56E4E5C828B3F59200ABCFBB /* Requester */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Requester;
+		};
+		56E4E5CF28B4DBA700ABCFBB /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

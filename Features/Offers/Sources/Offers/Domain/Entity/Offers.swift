@@ -1,11 +1,16 @@
 //
-//  FlightOffer.swift
+//  Offers.swift
 //  
 //
 //  Created by Matus Littva on 23/08/2022.
 //
 
 import Foundation
+
+struct Offers {
+    let currency: Currency
+    let offers: [FlightOffer]
+}
 
 struct FlightOffer {
     let id: String
@@ -15,7 +20,6 @@ struct FlightOffer {
     let cityTo: String
     let flyDuration: String
     let price: Double
-    let currency: Currency
     let countryFrom: String
     let countryTo: String
     let hashtags: [String]

@@ -15,7 +15,7 @@ final class OffersListUseCase: OffersListUseCaseType {
         self.offersRepository = offersRepository
     }
 
-    func offers() -> AnyPublisher<[FlightOffer], OffersError> {
+    func offers() -> AnyPublisher<Offers, OffersError> {
         offersRepository
             .offers()
             .mapError { .offersRepositoryError($0) }

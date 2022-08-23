@@ -16,8 +16,10 @@ struct OffersView<ViewModel: OffersVMType>: View {
             Text("Loading")
         case .loaded:
             Text("Loaded")
+        case .empty:
+            Text("Empty")
         case .failed:
-            Text("failed")
+            Text("Failed")
         }
     }
 }
@@ -30,7 +32,6 @@ struct OffersView_Previews: PreviewProvider {
     }
 
     final class MockVM: OffersVMType {
-        let state: OffersViewState = .loaded
+        let state: OffersViewState = .loaded(.mock)
     }
 }
-

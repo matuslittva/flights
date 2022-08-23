@@ -6,6 +6,8 @@
 //
 
 import Combine
+import Foundation
+import Utilities
 
 final class OffersVM: OffersVMType {
 
@@ -14,18 +16,44 @@ final class OffersVM: OffersVMType {
 
     // MARK: - Properties
     private let useCase: OffersListUseCaseType
+    private let fetchData = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
     init(useCase: OffersListUseCaseType) {
         self.useCase = useCase
-        useCase
-            .offers()
-            .sink { completion in
-                debugPrint(completion)
-            } receiveValue: { value in
-                debugPrint(value)
+        setupBindings()
+        fetchData.send()
+    }
+}
+
+private extension OffersVM {
+    func setupBindings() {
+        fetchData
+            .flatMap { [weak self] _ -> AnyPublisher<Result<OffersUI, UIError>, Never> in
+                guard let self = self else {
+                    return Fail(error: .selfIsNil)
+                        .materialize()
+                }
+                self.state = .loading
+                return self.useCase
+                    .offers()
+                    .map { OffersUI(domain: $0) }
+                    .mapError { _ in .fullScreen }
+                    .materialize()
+            }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                case .success(let offers):
+                    if offers.items.isEmpty {
+                        self?.state = .empty
+                    } else {
+                        self?.state = .loaded(offers)
+                    }
+                case .failure:
+                    self?.state = .failed
+                }
             }
             .store(in: &cancellable)
-
     }
 }

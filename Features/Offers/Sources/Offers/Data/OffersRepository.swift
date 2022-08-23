@@ -18,7 +18,7 @@ final class OffersRepository: OffersRepositoryType {
         self.requester = requester
     }
 
-    func offers() -> AnyPublisher<[FlightOffer], OffersRepositoryError> {
+    func offers() -> AnyPublisher<Offers, OffersRepositoryError> {
         let request = requester.buildGet(
             with: flightsPath,
             parameters: [

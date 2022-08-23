@@ -8,21 +8,23 @@
 import Foundation
 
 extension OffersResponse {
-    var domain: [FlightOffer] {
-        data.map { offer in
-            FlightOffer(
-                id: offer.id,
-                flyFrom: offer.flyFrom,
-                flyTo: offer.flyTo,
-                cityFrom: offer.cityFrom,
-                cityTo: offer.cityTo,
-                flyDuration: offer.flyDuration,
-                price: offer.price,
-                currency: Currency(rawValue: currency.lowercased()) ?? .unknown,
-                countryFrom: offer.countryFrom.name,
-                countryTo: offer.countryTo.name,
-                hashtags: offer.hashtags
-            )
-        }
+    var domain: Offers {
+        Offers(
+            currency: Currency(rawValue: currency.lowercased()) ?? .unknown,
+            offers: data.map { offer in
+                FlightOffer(
+                    id: offer.id,
+                    flyFrom: offer.flyFrom,
+                    flyTo: offer.flyTo,
+                    cityFrom: offer.cityFrom,
+                    cityTo: offer.cityTo,
+                    flyDuration: offer.flyDuration,
+                    price: offer.price,
+                    countryFrom: offer.countryFrom.name,
+                    countryTo: offer.countryTo.name,
+                    hashtags: offer.hashtags
+                )
+            }
+        )
     }
 }

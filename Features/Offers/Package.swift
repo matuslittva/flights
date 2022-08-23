@@ -12,12 +12,13 @@ let package = Package(
             targets: ["Offers"]),
     ],
     dependencies: [
-        .package(path: "../Libraries/Requester")
+        .package(path: "../Libraries/Requester"),
+        .package(path: "../Libraries/Utilities")
     ],
     targets: [
         .target(
             name: "Offers",
-            dependencies: ["Requester"]),
+            dependencies: ["Requester", "Utilities"]),
         .testTarget(
             name: "OffersTests",
             dependencies: ["Offers"]),

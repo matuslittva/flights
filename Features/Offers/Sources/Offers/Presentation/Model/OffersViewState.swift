@@ -7,6 +7,7 @@
 
 enum OffersViewState {
     case loading
-    case loaded
+    case loaded(OffersUI)
+    case empty
     case failed
 }

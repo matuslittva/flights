@@ -8,5 +8,5 @@
 import Combine
 
 protocol OffersRepositoryType {
-    func offers() -> AnyPublisher<[FlightOffer], OffersRepositoryError>
+    func offers() -> AnyPublisher<Offers, OffersRepositoryError>
 }
